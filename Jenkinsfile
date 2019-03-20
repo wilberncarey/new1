@@ -1,18 +1,23 @@
 pipeline {
   agent none
   stages {
-    stage('build'){
+    stage('build') {
       agent any
       steps {
         sleep 2
       }
     }
-    stage('approval'){
+    stage('approval') {
       steps {
         catchError() {
           input(message: 'approve', id: 'approve', ok: 'YES', submitter: 'dmin', submitterParameter: 'YES')
         }
 
+      }
+    }
+    stage('ech') {
+      steps {
+        echo 'thnk'
       }
     }
   }
