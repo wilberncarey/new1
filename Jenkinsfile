@@ -1,12 +1,11 @@
 pipeline {
   agent none
   stages {
-    stage('build') milestone() {
+    stage('build'){
       agent any
       steps {
         sleep 2
       }
- lock(resource: 'myResource', inversePrecedence: true)
     }
     stage('approval') milestone() {
       steps {
