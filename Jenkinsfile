@@ -7,7 +7,7 @@ pipeline {
         sleep 2
       }
     }
-    stage('approval') milestone() {
+    stage('approval'){
       steps {
         catchError() {
           input(message: 'approve', id: 'approve', ok: 'YES', submitter: 'dmin', submitterParameter: 'YES')
