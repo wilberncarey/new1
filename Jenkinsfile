@@ -21,7 +21,7 @@ pipeline {
           steps {
             echo 'Move to Snapshot'
             input(message: 'Crete Snapshot', id: 'Deploy Snapshot to Nexus?', ok: 'Deploy Snapshot to Nexus', submitter: 'will', submitterParameter: 'snapshot')
-            emailext(subject: 'test', body: 'test', replyTo: 'wbc12203@gmail.com', to: 'wbc12203@gmail.com')
+            emailext(subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS', body: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:  Check console output at $BUILD_URL to view the results.', replyTo: 'wbc12203@gmail.com', to: 'wbc12203@gmail.com', from: 'Jenkinsdmin@its.ny.gov')
           }
         }
         stage('Deploy to Test?') {
@@ -33,7 +33,8 @@ pipeline {
     }
     stage('test deploy') {
       steps {
-        mail(subject: 'test', body: 'test plese respond', from: 'wbc12203@gmail.com', replyTo: 'wbc12203@gmail.com', to: 'wilberncarey@hotmail.com', charset: 'UTF-8')
+        echo 'hello'
+        input(message: 'forwrd', id: 'forwrd', submitter: 'will', submitterParameter: 'will', ok: 'deploy?')
       }
     }
     stage('Release?') {
