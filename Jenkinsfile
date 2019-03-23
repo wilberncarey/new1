@@ -21,6 +21,7 @@ pipeline {
           steps {
             echo 'Move to Snapshot'
             input(message: 'Crete Snapshot', id: 'Deploy Snapshot to Nexus?', ok: 'Deploy Snapshot to Nexus', submitter: 'will', submitterParameter: 'snapshot')
+            emailext(subject: 'test', body: 'test', replyTo: 'wbc12203@gmail.com', to: 'wbc12203@gmail.com')
           }
         }
         stage('Deploy to Test?') {
