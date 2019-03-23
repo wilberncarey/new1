@@ -15,7 +15,7 @@ pipeline {
 
       }
     }
-    stage('promote?') {
+    stage('promote test?') {
       parallel {
         stage('promote?') {
           steps {
