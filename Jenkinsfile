@@ -21,7 +21,7 @@ pipeline {
           steps {
             echo 'Move to Snapshot'
             input(message: 'Crete Snapshot', id: 'Deploy Snapshot to Nexus?', ok: 'Deploy Snapshot to Nexus', submitter: 'will', submitterParameter: 'snapshot')
-            emailext(subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS', body: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:  Check console output at $BUILD_URL to view the results.', replyTo: 'wilberncarey@hotmail,com', to: 'wilberncarey@hotmail,com', from: 'wilberncarey@hotmail,com')
+            emailext(subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS', body: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:  Check console output at $BUILD_URL to view the results.', replyTo: 'wilberncarey@hotmail.com', to: 'wilberncarey@hotmail.com', from: 'wilberncarey@hotmail.com')
           }
         }
         stage('Deploy to Test?') {
