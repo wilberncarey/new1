@@ -5,7 +5,6 @@ pipeline {
       agent any
       steps {
         sleep 2
-        sleep 123
       }
     }
     stage('dev deploy') {
