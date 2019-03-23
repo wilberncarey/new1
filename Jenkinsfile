@@ -32,7 +32,8 @@ pipeline {
     }
     stage('test deploy') {
       steps {
-        echo 'new'
+        emailext(subject: 'approve', body: 'please approve', attachLog: true, attachmentsPattern: 'wil', from: 'will')
+        mail(subject: 'test', body: 'test', from: 'wbc12203@gmail.com', replyTo: 'wbc12203@gmail.com', to: 'wbc12203@gmail.com')
       }
     }
     stage('Release?') {
