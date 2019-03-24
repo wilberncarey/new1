@@ -14,6 +14,7 @@ pipeline {
       }
     }
     stage('promote?') {
+      agent any
       steps {
         emailext(subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS', body: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:  Check console output at $BUILD_URL to view the results.', replyTo: 'wilberncarey@hotmail.com', to: 'wilberncarey@hotmail.com', from: 'wilberncarey@hotmail.com', mimeType: 'text/html')
         echo 'HELLO'
