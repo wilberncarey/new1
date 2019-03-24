@@ -7,7 +7,7 @@ pipeline {
         sleep 2
       }
     }
-    stage('dev deploy') {
+    stage('dev 2deploy') {
       steps {
         catchError() {
           input(message: 'approve', id: 'approve', ok: 'YES', submitter: 'dmin', submitterParameter: 'YES')
