@@ -8,6 +8,7 @@ pipeline {
       }
     }
     stage('dev deploy') {
+      agent any
       steps {
         catchError()
       }
